@@ -1,0 +1,140 @@
+.sidebar {
+  width: 240px;
+  background-color: var(--sidebar-bg);
+  color: #A1A1AA;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  border-right: 1px solid #27272A;
+  z-index: 10;
+}
+
+[data-theme='light'] .sidebar {
+  /* Using dark sidebar even in light mode as per specs: "Sidebar dark #111111" */
+  background-color: #111111;
+  color: #A1A1AA;
+}
+
+.sidebar.collapsed {
+  width: 64px;
+}
+
+.sidebar-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-4);
+  border-bottom: 1px solid #27272A;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--accent-red);
+  color: white;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-lg);
+  flex-shrink: 0;
+}
+
+.logo-text {
+  color: white;
+  font-weight: 600;
+  font-size: var(--font-md);
+  white-space: nowrap;
+}
+
+.sidebar-nav {
+  padding: var(--space-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+  overflow-y: auto;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  margin: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  color: #A1A1AA;
+  transition: all 0.2s;
+  height: 40px;
+}
+
+.nav-item:hover {
+  background-color: rgba(255,255,255,0.05);
+  color: white;
+}
+
+.nav-item.active {
+  background-color: rgba(215, 43, 43, 0.1);
+  color: var(--accent-red);
+}
+
+.sidebar.collapsed .nav-item {
+  justify-content: center;
+  padding: var(--space-2);
+}
+
+.nav-icon {
+  flex-shrink: 0;
+}
+
+.nav-label {
+  white-space: nowrap;
+  font-size: var(--font-sm);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    height: 60px !important;
+    flex-direction: row;
+    z-index: 100;
+    border-right: none;
+    border-top: 1px solid #27272A;
+  }
+
+  .sidebar-header {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-item {
+    padding: 0 var(--space-4);
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .nav-label {
+    display: none !important;
+  }
+}

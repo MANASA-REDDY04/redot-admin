@@ -1,0 +1,103 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--sidebar-bg); /* Dark textured bg */
+  background-image: radial-gradient(circle at center, #1A1A1A 0%, #111111 100%);
+  color: white;
+}
+
+[data-theme='light'] .login-container {
+  background-color: #111;
+  background-image: radial-gradient(circle at center, #2C2C2C 0%, #111111 100%);
+  color: white;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.logo-icon-lg {
+  width: 56px;
+  height: 56px;
+  background-color: var(--accent-red);
+  color: white;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-2xl);
+  margin-bottom: var(--space-4);
+}
+
+.login-title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-1);
+}
+
+.login-subtitle {
+  font-size: var(--font-sm);
+  color: #A1A1AA;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-group label {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  color: #E2E2E2;
+}
+
+.form-group input, 
+.form-group select {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  height: 44px;
+}
+
+.form-group input:focus, 
+.form-group select:focus {
+  border-color: var(--accent-red);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.form-group option {
+  background-color: var(--sidebar-bg);
+  color: white;
+}
+
+.login-btn {
+  height: 48px;
+  font-size: var(--font-md);
+  font-weight: 600;
+  margin-top: var(--space-4);
+}
